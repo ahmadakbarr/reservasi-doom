@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Reservasi Ruangan</title>
+    <!-- Menggunakan CDN Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-8">Sistem Reservasi Ruangan Kelas</h1>
+
+        <!-- Daftar Ruangan -->
+        <section id="ruangan-list" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Daftar Ruangan</h2>
+            <table class="min-w-full table-auto border-collapse bg-white rounded-lg shadow-lg">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-2 px-4 text-left">No. Ruangan</th>
+                        <th class="py-2 px-4 text-left">Kapasitas</th>
+                        <th class="py-2 px-4 text-left">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="ruangan-table">
+                    <!-- Data ruangan akan diisi melalui JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Formulir Reservasi -->
+        <section id="reservasi-form" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Formulir Reservasi</h2>
+            <form id="form-reservasi" class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label for="nama-pemesan" class="block text-sm font-medium text-gray-700">Nama Pemesan:</label>
+                    <input type="text" id="nama-pemesan" class="mt-1 p-2 w-full border border-gray-300 rounded-lg"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="nomor-ruangan" class="block text-sm font-medium text-gray-700">Nomor Ruangan:</label>
+                    <input type="number" id="nomor-ruangan" class="mt-1 p-2 w-full border border-gray-300 rounded-lg"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="tanggal-reservasi" class="block text-sm font-medium text-gray-700">Tanggal
+                        Reservasi:</label>
+                    <input type="date" id="tanggal-reservasi" class="mt-1 p-2 w-full border border-gray-300 rounded-lg"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="waktu-mulai" class="block text-sm font-medium text-gray-700">Waktu Mulai:</label>
+                    <input type="time" id="waktu-mulai" class="mt-1 p-2 w-full border border-gray-300 rounded-lg"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="durasi" class="block text-sm font-medium text-gray-700">Durasi (Jam):</label>
+                    <input type="number" id="durasi" class="mt-1 p-2 w-full border border-gray-300 rounded-lg" min="1"
+                        required>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Pesan
+                    Ruangan</button>
+                <p id="error-message" class="mt-2 text-red-500"></p>
+            </form>
+        </section>
+
+        <!-- Daftar Reservasi -->
+        <section id="daftar-reservasi">
+            <h2 class="text-2xl font-semibold mb-4">Daftar Reservasi</h2>
+            <table class="min-w-full table-auto border-collapse bg-white rounded-lg shadow-lg">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-2 px-4 text-left">Nama Pemesan</th>
+                        <th class="py-2 px-4 text-left">No. Ruangan</th>
+                        <th class="py-2 px-4 text-left">Tanggal</th>
+                        <th class="py-2 px-4 text-left">Waktu Mulai</th>
+                        <th class="py-2 px-4 text-left">Durasi</th>
+                        <th class="py-2 px-4 text-left">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="reservasi-table">
+                    <!-- Data reservasi akan diisi melalui JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        
+ 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
